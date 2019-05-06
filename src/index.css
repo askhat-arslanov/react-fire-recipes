@@ -1,0 +1,121 @@
+:root {
+  --dark-green: #2aa57e;
+  --yellow: #d4a503;
+  --black: #272727;
+  --grey: rgb(216, 216, 216);
+  --dark-grey: rgb(59, 59, 59);
+  --line: 1px solid var(--grey);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /* 1rem == 10px */
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  font-family: 'Comfortaa', cursive;
+}
+a {
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+p {
+  color: var(--dark-grey);
+}
+@-webkit-keyframes autofill {
+  to {
+    color: rgb(0, 0, 0);
+    background: transparent;
+  }
+}
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+form {
+  overflow: hidden;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 20px 10px 10px 10px;
+  font-size: 1.4rem;
+  font-family: inherit;
+  outline: 0;
+  border: none;
+  border-bottom: 1px solid var(--grey);
+  transition: all 0.2s;
+}
+input:focus,
+textarea:focus {
+  border-bottom: 2px solid var(--dark-green);
+}
+button {
+  display: block;
+  -webkit-appearance: none;
+  outline: 0;
+  border: 0;
+  color: white;
+  background: brown;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.9rem;
+}
+button:hover {
+  opacity: 0.9;
+}
+button:disabled {
+  background: rgb(117, 100, 100);
+}
+button:disabled:hover {
+  opacity: 1;
+  cursor: default;
+}
+.btn {
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.btn-green {
+  padding: 5px;
+  width: 10rem;
+  height: 4rem;
+  background-color: var(--dark-green);
+}
+.btn-green-outline {
+  padding: 5px;
+  border: 1px solid var(--dark-green);
+  border-radius: 5px;
+  background-color: #fff;
+  color: var(--dark-green);
+}
+.btn-accent {
+  padding: 10px 25px;
+  color: #fff;
+  background-color: crimson;
+}
+.underline {
+  border-bottom: 1px solid var(--dark-grey);
+}
+.error-message {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: crimson;
+  padding: 20px;
+  border-radius: 7px;
+}
+h1,
+h2 {
+  color: var(--dark-grey);
+}
+li {
+  list-style-type: none;
+}
+hr {
+  color: rgb(127, 153, 163);
+}

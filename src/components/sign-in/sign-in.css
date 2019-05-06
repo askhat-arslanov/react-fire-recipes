@@ -1,0 +1,37 @@
+.signin-page {
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: [site-left] repeat(12, [col-start] 1fr [col-end]) [site-right];
+}
+.signin-page__header {
+  grid-column: site-left / site-right;
+  text-align: center;
+}
+.signin-page__form {
+  grid-column: col-start 5 / col-end 8;
+  width: 100%;
+  padding: 20px 60px;
+  border-radius: 5px;
+}
+.signin-link {
+  grid-column: site-left / site-right;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 919px) {
+  .signin-page__form {
+    grid-column: col-start 4 / col-end 9;
+  }
+}
+@media (max-width: 768px) {
+  .signin-page__form {
+    grid-column: col-start 3 / col-end 10;
+  }
+}
+@media (max-width: 467px) {
+  .signin-page__form {
+    grid-column: col-start 1 / col-end 12;
+    padding: 20px 20px;
+  }
+}

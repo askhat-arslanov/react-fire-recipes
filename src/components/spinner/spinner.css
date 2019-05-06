@@ -1,0 +1,12 @@
+.ripple {
+  height: 30px;
+}
+.wrapper-loader {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.wrapper-loader img {
+  object-fit: cover;
+  width: 50%;
+}

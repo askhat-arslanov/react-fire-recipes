@@ -1,0 +1,10 @@
+.empty-list {
+  justify-self: center;
+  align-self: center;
+  grid-column: 1 / -1;
+  padding: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  border: var(--line);
+  border-radius: 7px;
+}

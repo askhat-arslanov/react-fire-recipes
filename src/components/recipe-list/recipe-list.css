@@ -1,0 +1,25 @@
+.recipe-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 5rem;
+  padding-top: 3rem;
+  margin: 2rem 15rem;
+}
+
+@media (max-width: 1300px) {
+  .recipe-list {
+    margin: 2rem 10rem;
+  }
+}
+@media (max-width: 1019px) {
+  .recipe-list {
+    grid-template-columns: 1fr;
+    margin: 2rem 5rem;
+  }
+}
+@media (max-width: 479px) {
+  .recipe-list {
+    margin: 2rem 1rem;
+  }
+}
