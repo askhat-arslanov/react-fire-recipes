@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
-import './bookmarks.css'
+import './bookmarks.scss'
 import { withFirebase } from '../firebase'
 import { withAuthorization } from '../session'
 import EmptyList from '../empty-list'

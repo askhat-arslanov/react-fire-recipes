@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
-import './index.css'
+import './index.scss'
 import Firebase, { FirebaseContext } from './components/firebase'
 import App from './components/app'
 import * as serviceWorker from './serviceWorker'

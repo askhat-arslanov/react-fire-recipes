@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 :root {
   --dark-green: #2aa57e;
   --yellow: #d4a503;
@@ -10,23 +12,34 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%; /* 1rem == 10px */
 }
+
 body {
   margin: 0;
   padding: 0;
   width: auto;
   font-family: 'Comfortaa', cursive;
 }
+
 a {
   color: var(--dark-grey);
   text-decoration: none;
 }
+
 p {
   color: var(--dark-grey);
 }
+
 @-webkit-keyframes autofill {
+  to {
+    color: rgb(0, 0, 0);
+    background: transparent;
+  }
+}
+@keyframes autofill {
   to {
     color: rgb(0, 0, 0);
     background: transparent;
@@ -34,11 +47,15 @@ p {
 }
 input:-webkit-autofill {
   -webkit-animation-name: autofill;
+  animation-name: autofill;
   -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
+
 form {
   overflow: hidden;
 }
+
 input,
 textarea {
   display: block;
@@ -50,11 +67,12 @@ textarea {
   border: none;
   border-bottom: 1px solid var(--grey);
   transition: all 0.2s;
+
+  &:focus {
+    border-bottom: 2px solid var(--dark-green);
+  }
 }
-input:focus,
-textarea:focus {
-  border-bottom: 2px solid var(--dark-green);
-}
+
 button {
   display: block;
   -webkit-appearance: none;
@@ -65,27 +83,33 @@ button {
   cursor: pointer;
   font-family: inherit;
   font-size: 1.9rem;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    background: rgb(117, 100, 100);
+
+    &:hover {
+      opacity: 1;
+      cursor: default;
+    }
+  }
 }
-button:hover {
-  opacity: 0.9;
-}
-button:disabled {
-  background: rgb(117, 100, 100);
-}
-button:disabled:hover {
-  opacity: 1;
-  cursor: default;
-}
+
 .btn {
   margin: 20px auto;
   border-radius: 5px;
 }
+
 .btn-green {
   padding: 5px;
   width: 10rem;
   height: 4rem;
   background-color: var(--dark-green);
 }
+
 .btn-green-outline {
   padding: 5px;
   border: 1px solid var(--dark-green);
@@ -93,14 +117,17 @@ button:disabled:hover {
   background-color: #fff;
   color: var(--dark-green);
 }
+
 .btn-accent {
   padding: 10px 25px;
   color: #fff;
   background-color: crimson;
 }
+
 .underline {
   border-bottom: 1px solid var(--dark-grey);
 }
+
 .error-message {
   text-align: center;
   font-size: 1.7rem;
@@ -109,13 +136,51 @@ button:disabled:hover {
   padding: 20px;
   border-radius: 7px;
 }
+
 h1,
 h2 {
   color: var(--dark-grey);
 }
+
 li {
   list-style-type: none;
 }
+
 hr {
   color: rgb(127, 153, 163);
+}
+
+.auth-page {
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: [site-left] repeat(12, [col-start] 1fr [col-end]) [site-right];
+
+  &__header {
+    grid-column: site-left / site-right;
+    text-align: center;
+  }
+  &__form {
+    grid-column: col-start 5 / col-end 8;
+    width: 100%;
+    padding: 20px 60px;
+
+    @include desktop {
+      grid-column: col-start 4 / col-end 9;
+    }
+
+    @include tablet {
+      grid-column: col-start 3 / col-end 10;
+    }
+
+    @include mobile {
+      grid-column: col-start 1 / col-end 12;
+      padding: 20px 20px;
+    }
+  }
+}
+
+.auth__link {
+  grid-column: site-left / site-right;
+  text-align: center;
+  font-size: 1.4rem;
 }

@@ -1,0 +1,63 @@
+@import '../../mixins.scss';
+
+.create-recipe {
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: [site-left] repeat(12, [col-start] 1fr [col-end]) [site-right];
+
+  &__header {
+    grid-column: site-left / site-right;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+  &__form {
+    grid-column: col-start 4 / col-end 9;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 5px;
+
+    @include desktop {
+      grid-column: col-start 3 / col-end 10;
+    }
+
+    @include tablet {
+      grid-column: site-left / site-right;
+    }
+  }
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+  input[type='radio'] {
+    transform: translateX(-999rem);
+  }
+  input[type='radio']:checked + label {
+    background-color: crimson;
+    color: #fff;
+  }
+  .label-radio {
+    padding: 5px;
+    font-size: 1.4rem;
+    color: var(--dark-grey);
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .label-radio {
+    border: 1px solid transparent;
+  }
+  .label-radio:hover {
+    border: 1px solid var(--grey);
+  }
+  .btn-add-step {
+    margin: 10px 0;
+  }
+}

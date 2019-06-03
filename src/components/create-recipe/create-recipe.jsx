@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
-import './create-recipe.css'
+import './create-recipe.scss'
 import { withFirebase } from '../firebase'
 import { withAuthorization } from '../session'
 import CreateForm from './elements'

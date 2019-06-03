@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './recipe-list.css'
+import './recipe-list.scss'
 import RecipeItem from '../recipe-item'
 import EmptyList from '../empty-list'
 

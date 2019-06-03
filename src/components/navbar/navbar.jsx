@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-import './navbar.css'
+import './navbar.scss'
 import { AuthUserContext } from '../session'
 import SignOutLink from '../sign-out'
 

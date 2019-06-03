@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './recipe-item.css'
+import './recipe-item.scss'
 
 const RecipeItem = ({
   id,

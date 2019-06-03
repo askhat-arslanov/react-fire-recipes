@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
-import './sign-in.css'
 import { withFirebase } from '../firebase'
 import { SignUpLink } from '../sign-up'
 import { RippleSpinner } from '../spinner'
 
 const SignInPage = () => (
-  <div className="signin-page">
-    <h1 className="signin-page__header">Sign In</h1>
+  <div className="auth-page">
+    <h1 className="auth-page__header">Sign In</h1>
     <SignInForm />
     <SignUpLink />
   </div>
@@ -45,7 +44,7 @@ class SignInFormBase extends Component {
     const { email, password, error, loading } = this.state
     const isInvalid = !email || !password
     return (
-      <div className="signin-page__form">
+      <div className="auth-page__form">
         <form onSubmit={this.handleSubmit}>
           <div>
             <input
@@ -81,7 +80,7 @@ const SignInForm = compose(
 )(SignInFormBase)
 
 const SignInLink = () => (
-  <div className="signin-link">
+  <div className="auth__link">
     Already have an account?{' '}
     <Link className="underline" to="/signin">
       Sign In

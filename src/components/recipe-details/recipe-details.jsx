@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
-import './recipe-details.css'
+import './recipe-details.scss'
 import { withFirebase } from '../firebase'
 import { FoodSpinner } from '../spinner'
 import { Header, TopSection, MidSection, BottomSection } from './elements'

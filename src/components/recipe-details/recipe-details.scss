@@ -1,0 +1,195 @@
+@import '../../mixins.scss';
+
+.recipe-details {
+  margin: 2rem 15rem;
+  grid-column: col-start 2 / col-end 11;
+  display: grid;
+  grid-template-columns: [recipe-left] repeat(12, [col-start] 1fr [col-end]) [recipe-right];
+
+  @include big-desktop {
+    margin: 2rem 5rem;
+  }
+
+  @include mobile {
+    margin: 2rem 2rem;
+  }
+
+  /* Recipe header */
+  &__header {
+    grid-column: recipe-left / recipe-right;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    border-bottom: var(--line);
+    font-size: 2rem;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  &__to-bookmark {
+    min-width: 13rem;
+    height: 6rem;
+  }
+
+  /* Recipe top-section */
+  &__top-section {
+    grid-column: recipe-left / recipe-right;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 5px;
+    border-bottom: var(--line);
+    font-size: 1.5rem;
+    justify-items: center;
+    align-items: center;
+    color: var(--dark-grey);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      justify-items: center;
+    }
+  }
+
+  &__top-section > * {
+    padding: 5px;
+  }
+
+  &__author {
+    font-weight: 100;
+    margin: 0;
+  }
+
+  /* Recipe mid-section */
+  &__mid-section {
+    grid-column: recipe-left / recipe-right;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: var(--line);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__description {
+    line-height: 2;
+    font-size: 1.5rem;
+
+    @include tablet {
+      order: 1;
+    }
+  }
+
+  &__img-wrapper {
+    @include tablet {
+      order: 0;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Recipe bottom-section */
+  &__bottom-section {
+    grid-column: recipe-left / recipe-right;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+  }
+
+  &__ingredients {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  &__ingredients h2,
+  &__steps h2 {
+    font-weight: 100;
+  }
+
+  &__ingredient {
+    color: var(--dark-grey);
+    padding: 10px 0;
+
+    &:not(:last-child) {
+      border-bottom: var(--line);
+    }
+  }
+
+  &__steps {
+    font-size: 1.5rem;
+  }
+
+  &__step-list,
+  &__ingredient-list {
+    padding: 0;
+  }
+
+  &__steps--number {
+    display: block;
+    color: crimson;
+    font-size: 2rem;
+    font-weight: bold;
+    text-justify: distribute;
+    margin: 15px 20px 0 0;
+  }
+  &__step {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--grey);
+    }
+
+    &.done {
+      p {
+        text-decoration: line-through;
+        color: var(--grey);
+      }
+
+      span {
+        color: var(--grey);
+      }
+    }
+  }
+}
+
+/* Rating */
+.rating {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  &__value {
+    font-size: 2rem;
+    margin: 5px;
+  }
+}
+.arrow {
+  cursor: pointer;
+  font-size: 2rem;
+
+  &-up:hover {
+    color: var(--dark-green);
+  }
+
+  &-down:hover {
+    color: crimson;
+  }
+}

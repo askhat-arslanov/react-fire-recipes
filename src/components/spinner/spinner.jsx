@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './spinner.css'
+import './spinner.scss'
 import pizza from './svg/pizza2.svg'
 import pizzaBig from './svg/pizza-big.svg'
 import ripple from './svg/ripple.svg'

@@ -1,0 +1,16 @@
+.pagination {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 10px;
+
+  &__prev-page,
+  &__next-page {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    color: #fff;
+    background-color: crimson;
+    border-radius: 5px;
+    font-size: 1.5rem;
+  }
+}
