@@ -32,20 +32,9 @@ class CreateRecipe extends Component {
         authorId: this.props.authUser.id
       })
   }
-  componentDidUpdate(_, prevState) {
-    if (prevState.authorName !== this.state.authorName)
-      this.setState({
-        authorName: this.props.authUser.username,
-        authorId: this.props.authUser.id
-      })
-  }
-  static getDerivedStateFromProps(nextProps, _) {
-    if (nextProps.authUser)
-      return {
-        authorName: nextProps.authUser.username,
-        authorId: nextProps.authUser.id
-      }
-    return null
+  shouldComponentUpdate(nextProps, _) {
+    if (this.state.authUser !== nextProps.authUser) return true
+    return false
   }
   handleChange = evt => {
     const { name, value } = evt.target
