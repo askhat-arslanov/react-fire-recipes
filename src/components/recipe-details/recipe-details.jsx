@@ -48,15 +48,10 @@ class RecipeDetails extends Component {
         history.push('/not-found')
       })
   }
-  componentDidUpdate(_, prevState) {
-    const { authUser } = this.props
-    if (prevState.authUser !== this.state.authUser) {
-      if (authUser) this.updateStateRecipeIsInBookmarks()
+  shouldComponentUpdate(nextProps, _) {
+    if (this.state.authUser !== nextProps.authUser) {
+      return true
     }
-  }
-  static getDerivedStateFromProps(nextProps, _) {
-    if (nextProps.authUser) return { authUser: nextProps.authUser }
-    return null
   }
   checkIfRecipeIsInBookmarks = callback => {
     const { recipeId } = this.props.match.params
