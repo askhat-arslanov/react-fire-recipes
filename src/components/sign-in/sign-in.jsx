@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
@@ -21,7 +21,7 @@ const INIT_STATE = {
   loading: false
 }
 
-class SignInFormBase extends Component {
+class SignInFormBase extends PureComponent {
   state = { ...INIT_STATE }
   handleChange = evt => {
     const { name, value } = evt.target

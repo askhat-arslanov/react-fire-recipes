@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { withFirebase } from '../firebase'
 import Pagination from '../pagination/pagination'
 import RecipeList, { RecipeListLoading } from '../recipe-list'
 
-class HomePage extends Component {
+class HomePage extends PureComponent {
   state = {
     recipes: [],
     loading: false,

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-class Step extends Component {
+class Step extends PureComponent {
   state = {
     done: false
   }

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
 import { withFirebase } from '../../firebase'
 
-class Rating extends Component {
+class Rating extends PureComponent {
   state = {
     rating: 0
   }

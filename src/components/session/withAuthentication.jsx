@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { withFirebase } from '../firebase'
 import AuthUserContext from './context'
 
 const withAuthentication = Wrapped => {
-  class WithAuthentication extends Component {
+  class WithAuthentication extends PureComponent {
     state = {
       authUser: JSON.parse(localStorage.getItem('authUser'))
     }

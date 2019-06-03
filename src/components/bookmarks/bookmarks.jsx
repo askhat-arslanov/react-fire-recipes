@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
@@ -8,7 +8,7 @@ import { withAuthorization } from '../session'
 import EmptyList from '../empty-list'
 import { FoodSpinner } from '../spinner'
 
-class Bookmarks extends Component {
+class Bookmarks extends PureComponent {
   state = {
     bookmarks: [],
     authUser: null,
@@ -35,10 +35,6 @@ class Bookmarks extends Component {
     } else {
       history.push('/')
     }
-  }
-  shouldComponentUpdate(nextProps, _) {
-    if (this.state.authUser !== nextProps.authUser) return true
-    return false
   }
   componentDidUpdate(_, prevState) {
     const { authUser, firebase } = this.props

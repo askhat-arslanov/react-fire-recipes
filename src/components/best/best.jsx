@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import { withFirebase } from '../firebase'
 import RecipeList from '../recipe-list'
 import { FoodSpinner } from '../spinner'
 
-class Best extends Component {
+class Best extends PureComponent {
   state = {
     recipes: [],
     loading: false

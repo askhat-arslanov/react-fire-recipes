@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
@@ -23,7 +23,7 @@ const INIT_STATE = {
   title: ''
 }
 
-class CreateRecipe extends Component {
+class CreateRecipe extends PureComponent {
   state = { ...INIT_STATE }
   componentDidMount() {
     if (this.props.authUser)
@@ -31,10 +31,6 @@ class CreateRecipe extends Component {
         authorName: this.props.authUser.username,
         authorId: this.props.authUser.id
       })
-  }
-  shouldComponentUpdate(nextProps, _) {
-    if (this.state.authUser !== nextProps.authUser) return true
-    return false
   }
   handleChange = evt => {
     const { name, value } = evt.target

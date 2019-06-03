@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
@@ -6,7 +6,7 @@ import { withFirebase } from '../firebase'
 import { AuthUserContext } from './index'
 
 const withAuthorization = condition => Wrapped => {
-  class WithAuthorization extends Component {
+  class WithAuthorization extends PureComponent {
     componentDidMount() {
       const { firebase, history } = this.props
       this.authListener = firebase.onAuthUserListener(
