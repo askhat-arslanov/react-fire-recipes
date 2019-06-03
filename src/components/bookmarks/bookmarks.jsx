@@ -36,6 +36,10 @@ class Bookmarks extends Component {
       history.push('/')
     }
   }
+  shouldComponentUpdate(nextProps, _) {
+    if (this.state.authUser !== nextProps.authUser) return true
+    return false
+  }
   componentDidUpdate(_, prevState) {
     const { authUser, firebase } = this.props
     if (prevState.authUser !== this.state.authUser) {
