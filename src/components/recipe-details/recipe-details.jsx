@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import { compose } from 'recompose'
 
@@ -7,7 +7,7 @@ import { withFirebase } from '../firebase'
 import { FoodSpinner } from '../spinner'
 import { Header, TopSection, MidSection, BottomSection } from './elements'
 
-class RecipeDetails extends Component {
+class RecipeDetails extends PureComponent {
   state = {
     authorName: '',
     description: '',
@@ -47,10 +47,6 @@ class RecipeDetails extends Component {
         console.log(error)
         history.push('/not-found')
       })
-  }
-  shouldComponentUpdate(nextProps, _) {
-    if (this.state.authUser !== nextProps.authUser) return true
-    return false
   }
   checkIfRecipeIsInBookmarks = callback => {
     const { recipeId } = this.props.match.params
