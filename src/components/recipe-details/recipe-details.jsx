@@ -49,9 +49,8 @@ class RecipeDetails extends Component {
       })
   }
   shouldComponentUpdate(nextProps, _) {
-    if (this.state.authUser !== nextProps.authUser) {
-      return true
-    }
+    if (this.state.authUser !== nextProps.authUser) return true
+    return false
   }
   checkIfRecipeIsInBookmarks = callback => {
     const { recipeId } = this.props.match.params
